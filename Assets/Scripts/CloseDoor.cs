@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CloseDoor : MonoBehaviour
 {
-    public bool CanOpen = false;
+    public bool CanOpen = true;
     private void OnTriggerEnter(Collider other)
     {
 
         // Vérifiez si l'objet qui est entré dans le trigger a le tag "Player"
-        if ((other.CompareTag("Floor")) && CanOpen)
+        if ((other.CompareTag("Player")) && CanOpen)
         {
 
             GetComponent<Animator>().enabled = true;
